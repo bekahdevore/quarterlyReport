@@ -1,0 +1,273 @@
+"","SOC","Occupation","deduplicated","2016 - 2026 Change","retirements","growthRetire","indexRank"
+"1","29-1141","Registered Nurses",5888,2119,3605,5724,0.5
+"2","41-4012","Sales Reps, Wholesale & Manufacturing, Non-technical",2851,295,2091,2386,3
+"3","15-1199","Computer Occupations, All Other",1707,97,154,251,99
+"4","15-1132","Software Developers, Applications",1460,695,332,1027,30
+"5","11-9199","Managers, All Other",1672,236,848,1084,22
+"6","13-1071","Human Resources Specialists",974,137,362,499,101.5
+"7","11-9111","Medical & Health Services Managers",1185,271,424,695,66
+"8","13-2011","Accountants & Auditors",972,620,1261,1881,20
+"9","29-1069","Physicians & Surgeons, All Other",534,214,489,703,147
+"10","11-1021","General & Operations Managers",667,620,2080,2700,11
+"11","11-2022","Sales Managers",772,103,270,373,210
+"12","13-1111","Management Analysts",793,579,643,1222,36
+"13","51-1011","Supervisors of Production & Operating Workers",508,35,768,803,144
+"14","43-1011","Supervisors of Office & Administrative Support Workers",533,620,1629,2249,30
+"15","11-3031","Financial Managers",558,107,562,669,156
+"16","29-1123","Physical Therapists",595,404,134,538,162
+"17","15-1121","Computer Systems Analysts",465,537,263,800,161.5
+"18","13-1161","Market Research Analysts & Marketing Specialists",459,343,234,577,225
+"19","29-2099","Health Technologists & Technicians, All Other",361,152,120,272,701.5
+"20","13-2051","Financial Analysts",336,88,78,166,1012.5
+"21","15-1141","Database Administrators",377,78,81,159,871.5
+"22","49-1011","Supervisors of Mechanics, Installers, & Repairers",345,107,731,838,180
+"23","29-1171","Nurse Practitioners",388,255,241,496,300
+"24","11-3051","Industrial Production Managers",318,-12,286,274,780
+"25","29-1051","Pharmacists",400,149,312,461,323
+"26","11-3121","Human Resources Managers",286,58,141,199,1087.5
+"27","29-1063","Internists, General",198,20,62,82,2234.5
+"28","11-2021","Marketing Managers",345,80,119,199,900
+"29","17-2071","Electrical Engineers",311,46,85,131,1242
+"30","17-2141","Mechanical Engineers",266,80,231,311,832
+"31","17-2199","Engineers, All Other",304,26,110,136,1260
+"32","15-1142","Network & Computer Systems Administrators",370,180,170,350,506
+"33","17-2112","Industrial Engineers",246,75,226,301,952
+"34","11-3071","Transportation, Storage, & Distribution Managers",241,49,168,217,1260
+"35","29-1127","Speech-Language Pathologists",278,178,120,298,855
+"36","21-1012","Educational, Guidance, School, & Vocational Counselors",171,77,239,316,1249.5
+"37","41-3031","Securities, Commodities, & Financial Services Sales Agents",248,-56,167,111,1617
+"38","25-2054","Special Education Teachers, Secondary School",60,35,111,146,3870
+"39","41-4011","Sales Reps, Wholesale & Manufacturing, Technical",273,136,368,504,434
+"40","15-1143","Computer Network Architects",238,72,57,129,1674
+"41","29-1071","Physician Assistants",120,122,51,173,2528
+"42","13-1199","Business Operations Specialists, All Other",154,442,754,1196,252
+"43","11-9151","Social & Community Service Managers",172,79,202,281,1392
+"44","47-2111","Electricians",219,342,607,949,247
+"45","11-9041","Architectural & Engineering Managers",191,35,138,173,1698.5
+"46","29-1126","Respiratory Therapists",212,89,168,257,1248
+"47","13-1023","Purchasing Agents, Except Wholesale, Retail, & Farm Products",185,62,289,351,1012.5
+"48","13-1081","Logisticians",111,31,84,115,3395
+"49","13-2072","Loan Officers",159,-130,259,129,2557.5
+"50","13-1141","Compensation, Benefits, & Job Analysis Specialists",183,36,70,106,2300
+"51","13-2052","Personal Financial Advisors",206,15,164,179,1560
+"52","11-9021","Construction Managers",194,-86,416,330,1029
+"53","11-2031","Public Relations & Fundraising Managers",165,26,62,88,2782
+"54","15-1131","Computer Programmers",162,50,116,166,2146.5
+"55","27-3031","Public Relations Specialists",154,60,153,213,2080.5
+"56","29-1062","Family & General Practitioners",95,56,139,195,2888
+"57","29-2011","Medical & Clinical Laboratory Technologists",187,83,146,229,1518
+"58","13-1151","Training & Development Specialists",170,130,255,385,1025
+"59","15-1122","Information Security Analysts",225,77,30,107,1831.5
+"60","23-1011","Lawyers",133,35,872,907,420
+"61","29-2032","Diagnostic Medical Sonographers",132,68,51,119,2897.5
+"62","11-9033","Education Administrators, Postsecondary",169,44,110,154,2142
+"63","17-3029","Engineering Technicians, Except Drafters, All Other",174,11,42,53,2937.5
+"64","11-9141","Property, Real Estate, & Community Association Managers",160,38,358,396,1053
+"65","17-2041","Chemical Engineers",170,-19,26,7,4100
+"66","29-2034","Radiologic Technologists",131,105,249,354,1364
+"67","19-3031","Clinical, Counseling, & School Psychologists",74,114,189,303,2160
+"68","17-2051","Civil Engineers",160,80,238,318,1350
+"69","53-1021","Supervisors of Helpers, Laborers, & Material Movers, Hand",96,94,208,302,2062.5
+"70","11-3061","Purchasing Managers",70,15,92,107,4158
+"71","17-3023","Electrical & Electronics Engineering Technicians",132,21,125,146,2623
+"72","21-1029","Social Workers, All Other",141,9,65,74,3304
+"73","11-1011","Chief Executives",83,-30,605,575,1014
+"74","25-2022","Middle School Teachers, Except Special & CTE",112,149,522,671,793.5
+"75","31-2021","Physical Therapist Assistants",198,197,50,247,1394
+"76","41-1012","Supervisors of Non-Retail Sales Workers",101,41,370,411,1350.5
+"77","11-3011","Administrative Services Managers",113,117,347,464,1122
+"78","13-1031","Claims Adjusters, Examiners, & Investigators",116,374,440,814,561
+"79","13-2099","Financial Specialists, All Other",121,14,103,117,3024
+"80","21-1091","Health Educators",106,38,32,70,4047
+"81","29-1031","Dietitians & Nutritionists",71,53,86,139,3608
+"82","51-4031","Cutting, Punching, & Press Machine Setters, Operators, & Tenders, Metal & Plastic",96,-403,669,266,2325
+"83","13-1041","Compliance Officers",118,92,215,307,1722.5
+"84","11-9032","Education Administrators, Elementary & Secondary School",78,57,340,397,1501
+"85","15-2011","Actuaries",114,52,17,69,3852.5
+"86","29-1064","Obstetricians & Gynecologists",66,16,36,52,5418
+"87","29-2031","Cardiovascular Technologists & Technicians",102,51,46,97,3708
+"88","29-1122","Occupational Therapists",151,172,78,250,1943
+"89","49-9041","Industrial Machinery Mechanics",84,299,535,834,616
+"90","29-1066","Psychiatrists",66,5,17,22,6407
+"91","17-1011","Architects, Except Landscape & Naval",48,39,97,136,4320
+"92","53-1031","Supervisors of Transportation & Material-Moving Machine & Vehicle Operators",48,79,316,395,1920
+"93","11-3131","Training & Development Managers",53,15,82,97,4841
+"94","19-1042","Medical Scientists, Except Epidemiologists",72,41,48,89,4293
+"95","15-2031","Operations Research Analysts",70,200,146,346,1950.5
+"96","25-2031","Secondary School Teachers, Except Special & CTE",70,234,885,1119,415
+"97","29-1061","Anesthesiologists",21,48,117,165,4674
+"98","49-9051","Electrical Power-Line Installers & Repairers",59,180,118,298,2593.5
+"99","13-1051","Cost Estimators",70,74,368,442,1470
+"100","11-3021","Computer & Information Systems Managers",60,294,188,482,1395
+"101","49-2022","Telecommunications Equipment Installers & Repairers, Except Line Installers",67,-88,187,99,4335
+"102","15-2041","Statisticians",55,56,25,81,5115
+"103","17-2111","Health & Safety Engineers, Except Mining Safety Engineers & Inspectors",56,5,18,23,6808
+"104","31-2011","Occupational Therapy Assistants",62,97,31,128,4183
+"105","51-2011","Aircraft Structure, Surfaces, Rigging, & Systems Assemblers",100,3,10,13,5846
+"106","29-1021","Dentists, General",52,122,239,361,2042.5
+"107","29-1067","Surgeons",26,45,104,149,4675
+"108","29-2021","Dental Hygienists",31,189,145,334,2520
+"109","29-9011","Occupational Health & Safety Specialists",67,4,98,102,4292.5
+"110","11-3111","Compensation & Benefits Managers",45,9,21,30,6909
+"111","13-2041","Credit Analysts",45,-9,31,22,7301
+"112","25-2059","Special Education Teachers, All Other",28,11,45,56,6696
+"113","29-1151","Nurse Anesthetists",16,57,122,179,4602
+"114","25-9031","Instructional Coordinators",64,32,158,190,3349.5
+"115","27-1025","Interior Designers",19,12,68,80,6382.5
+"116","15-1152","Computer Network Support Specialists",70,67,70,137,3693.5
+"117","41-9031","Sales Engineers",46,22,27,49,6208
+"118","11-9121","Natural Sciences Managers",41,6,26,32,7000
+"119","27-3042","Technical Writers",46,27,38,65,5723
+"120","49-3011","Aircraft Mechanics & Service Technicians",42,43,182,225,3465
+"121","53-2012","Commercial Pilots",19,5,23,28,8222.5
+"122","19-3022","Survey Researchers",23,3,10,13,8927
+"123","19-4092","Forensic Science Technicians",8,4,10,14,9969.5
+"124","29-1081","Podiatrists",10,8,10,18,9486
+"125","29-2035","Magnetic Resonance Imaging Technologists",62,15,23,38,5940
+"126","47-1011","Supervisors of Construction Trades & Extraction Workers",30,88,618,706,1060
+"127","53-7021","Crane & Tower Operators",34,18,41,59,6222
+"128","13-2053","Insurance Underwriters",26,34,59,93,5827.5
+"129","17-2081","Environmental Engineers",29,15,20,35,7383
+"130","19-4041","Geological & Petroleum Technicians",9,2,10,12,10017
+"131","33-3021","Detectives & Criminal Investigators",18,0,28,28,8294
+"132","43-5011","Cargo & Freight Agents",32,33,135,168,4160
+"133","49-2094","Electrical & Electronics Repairers, Commercial & Industrial Equipment",14,17,44,61,7260
+"134","51-4111","Tool & Die Makers",41,-42,265,223,3550
+"135","17-2131","Materials Engineers",32,3,10,13,8216
+"136","27-1022","Fashion Designers",6,6,10,16,9997.5
+"137","29-1131","Veterinarians",24,17,65,82,6104
+"138","29-1199","Health Diagnosing & Treating Practitioners, All Other",33,52,30,82,5613.5
+"139","15-1111","Computer & Information Research Scientists",26,7,10,17,8470
+"140","19-2031","Chemists",19,-7,31,24,8452.5
+"141","19-2041","Environmental Scientists & Specialists, Including Health",17,21,26,47,7546.5
+"142","19-4091","Environmental Science & Protection Technicians, Including Health",26,9,10,19,8360
+"143","25-2053","Special Education Teachers, Middle School",23,33,107,140,4915.5
+"144","29-1124","Radiation Therapists",7,11,10,21,9600
+"145","29-2092","Hearing Aid Specialists",10,9,10,19,9424
+"146","13-1022","Wholesale & Retail Buyers, Except Farm Products",18,34,125,159,4814
+"147","13-2021","Appraisers & Assessors of Real Estate",27,-5,104,99,5559
+"148","19-1022","Microbiologists",15,2,10,12,9460.5
+"149","27-1021","Commercial & Industrial Designers",38,11,30,41,6666
+"150","47-4011","Construction & Building Inspectors",28,20,115,135,4914
+"151","51-8092","Gas Plant Operators",5,-3,10,7,10742
+"152","53-2021","Air Traffic Controllers",5,-5,10,5,10873
+"153","25-2012","Kindergarten Teachers, Except Special Education",12,38,91,129,5719.5
+"154","25-4021","Librarians",27,17,194,211,4033
+"155","27-1011","Art Directors",6,14,46,60,7865
+"156","29-1041","Optometrists",10,83,45,128,5828
+"157","29-1181","Audiologists",7,20,16,36,8768
+"158","39-1011","GamingSupervisors",5,-7,10,3,10938.5
+"159","51-8093","Petroleum Pump System Operators, Refinery Operators, & Gaugers",6,-1,10,9,10530
+"160","11-9039","Education Administrators, All Other",6,1,28,29,9159
+"161","13-2031","Budget Analysts",19,18,66,84,6210
+"162","15-1133","Software Developers, Systems Software",19,197,81,278,3392.5
+"163","17-3012","Electrical & Electronics Drafters",10,11,27,38,8437.5
+"164","17-3026","Industrial Engineering Technicians",6,13,32,45,8450
+"165","19-1013","Soil & Plant Scientists",8,2,10,12,10096.5
+"166","19-3039","Psychologists, All Other",9,9,17,26,9135
+"167","21-2021","Directors, Religious Activities & Education",18,98,328,426,2088
+"168","25-2021","Elementary School Teachers, Except Special Education",38,318,1100,1418,353.5
+"169","25-9021","Farm & Home Management Advisors",10,8,16,24,9114
+"170","43-5053","Postal Service Mail Sorters, Processors, & Processing Machine Operators",2,-143,138,-5,11323
+"171","51-8013","Power Plant Operators",8,-48,73,25,9271
+"172","53-2022","Airfield Operations Specialists",5,8,24,32,9170
+"173","53-5021","Captains, Mates, & Pilots of Water Vessels",10,1,56,57,7626
+"174","53-6051","Transportation Inspectors",9,1,39,40,8379
+"175","13-1021","Buyers & Purchasing Agents, Farm Products",2,2,10,12,10653
+"176","13-1032","Insurance Appraisers, Auto Damage",10,-15,18,3,10437.5
+"177","13-2061","Financial Examiners",5,8,35,43,8580.5
+"178","17-2061","Computer Hardware Engineers",8,18,10,28,9080.5
+"179","19-1012","Food Scientists & Technologists",9,3,10,13,9954
+"180","19-1029","Biological Scientists, All Other",4,1,17,18,10098
+"181","19-2042","Geoscientists, Except Hydrologists & Geographers",6,7,17,24,9481.5
+"182","25-2051","Special Education Teachers, Preschool",10,9,10,19,9424
+"183","25-2052","Special Education Teachers, Kindergarten & Elementary School",7,68,191,259,4032
+"184","27-2042","Musicians & Singers",6,171,305,476,2064
+"185","29-1029","Dentists, All Other Specialists",3,3,10,13,10507
+"186","33-1012","Supervisors of Police & Detectives",4,23,70,93,6930
+"187","33-1021","Supervisors of Fire Fighting & Prevention Workers",8,14,43,57,7810.5
+"188","33-2021","Fire Inspectors & Investigators",8,3,10,13,10033
+"189","43-5051","Postal Service Clerks",3,-38,73,35,9177
+"190","49-9044","Millwrights",14,125,128,253,3900
+"191","51-9011","Chemical Equipment Operators & Tenders",6,-146,80,-66,11029.5
+"192","51-9122","Painters, Transportation Equipment",2,16,36,52,8442
+"193","53-2031","Flight Attendants",3,-146,54,-92,11438
+"194","11-2011","Advertising & Promotions Managers",13,-1,25,24,8967
+"195","13-1075","Labor Relations Specialists",4,16,207,223,4686
+"196","17-2161","Nuclear Engineers",2,2,10,12,10653
+"197","17-2171","Petroleum Engineers",2,1,10,11,10720
+"198","19-1031","Conservation Scientists",2,3,10,13,10586
+"199","19-2012","Physicists",2,3,10,13,10586
+"200","23-2099","Legal Support Workers, All Other",10,3,23,26,9062.5
+"201","27-2021","Athletes & Sports Competitors",3,0,16,16,10307.5
+"202","29-1022","Oral & Maxillofacial Surgeons",4,5,10,15,10296
+"203","29-1023","Orthodontists",3,8,18,26,9642.5
+"204","29-1129","Therapists, All Other",6,37,36,73,7345
+"205","49-2091","Avionics Technicians",4,5,10,15,10296
+"206","49-2093","Electrical & Electronics Installers & Repairers, Transportation Equipment",2,2,16,18,10251
+"207","49-2095","Electrical & Electronics Repairers, Powerhouse, Substation, & Relay",2,7,25,32,9450
+"208","49-9096","Riggers",2,11,16,27,9648
+"209","49-9097","Signal & Track Switch Repairers",4,-2,10,8,10758
+"210","51-4035","Milling & Planing Machine Setters, Operators, & Tenders, Metal & Plastic",2,-11,21,10,10787
+"211","51-8012","Power Distributors & Dispatchers",1,4,16,20,10268
+"212","53-1011","Aircraft Cargo HandlingSupervisors",1,42,32,74,7616
+"213","53-4031","Railroad Conductors & Yardmasters",5,-6,45,39,8777
+"214","53-6041","Traffic Technicians",2,1,10,11,10720
+"215","11-9061","Funeral Service Managers",3,9,10,19,10108
+"216","11-9071","Gaming Managers",1,0,10,10,10948
+"217","11-9131","Postmasters & Mail Superintendents",1,-8,18,10,10948
+"218","13-2081","Tax Examiners & Collectors, & Revenue Agents",8,-8,47,39,8509
+"219","15-2021","Mathematicians",NA,3,10,13,NA
+"220","15-2099","Mathematical Science Occupations, All Other",NA,1,10,11,NA
+"221","17-1012","Landscape Architects",1,2,10,12,10812
+"222","17-1021","Cartographers & Photogrammetrists",NA,5,10,15,NA
+"223","17-2011","Aerospace Engineers",1,8,10,18,10404
+"224","17-2031","Biomedical Engineers",3,10,10,20,10041.5
+"225","17-2072","Electronics Engineers, Except Computer",16,21,41,62,7021
+"226","17-2121","Marine Engineers & Naval Architects",NA,2,10,12,NA
+"227","17-2151","Mining & Geological Engineers, Including Mining Safety Engineers",3,0,10,10,10706.5
+"228","17-3025","Environmental Engineering Technicians",1,4,10,14,10676
+"229","19-1021","Biochemists & Biophysicists",1,5,10,15,10608
+"230","19-1032","Foresters",2,2,10,12,10732.5
+"231","19-1041","Epidemiologists",4,1,10,11,10560
+"232","19-1099","Life Scientists, All Other",2,3,10,13,10665
+"233","19-2021","Atmospheric & Space Scientists",4,1,10,11,10560
+"234","19-2043","Hydrologists",NA,1,10,11,NA
+"235","19-2099","Physical Scientists, All Other",8,2,10,12,10096.5
+"236","19-3011","Economists",3,5,10,15,10374
+"237","19-3099","Social Scientists & Related Workers, All Other",6,3,10,13,10191
+"238","23-1023","Judges, Magistrate Judges, & Magistrates",3,3,34,37,9044
+"239","25-1099","Postsecondary Teachers",NA,501,1279,1780,NA
+"240","25-2032","CTE Teachers, Secondary School",NA,9,10,19,NA
+"241","25-4011","Archivists",1,2,10,12,10812
+"242","27-3021","Broadcast News Analysts",1,-3,10,7,11152
+"243","27-4099","Media & Communication Equipment Workers, All Other",NA,0,10,10,NA
+"244","29-1011","Chiropractors",2,35,32,67,7897.5
+"245","29-1065","Pediatricians, General",2,14,51,65,7906
+"246","29-1161","Nurse Midwives",1,9,16,25,9928
+"247","29-2033","Nuclear Medicine Technologists",2,2,22,24,9922.5
+"248","29-2054","Respiratory Therapy Technicians",1,-4,10,6,11220
+"249","29-2091","Orthotists & Prosthetists",2,8,10,18,10327.5
+"250","37-3019","Grounds Maintenance Workers, All Other",NA,2,10,12,NA
+"251","39-4031","Morticians, Undertakers, & Funeral Directors",NA,33,86,119,NA
+"252","43-3099","Financial Clerks, All Other",NA,-1,25,24,NA
+"253","43-5052","Postal Service Mail Carriers",NA,-227,278,51,NA
+"254","45-2011","Agricultural Inspectors",1,1,10,11,10880
+"255","47-2082","Tapers",1,-28,10,-18,11560
+"256","47-2132","Insulation Workers, Mechanical",NA,96,21,117,NA
+"257","47-2171","Reinforcing Iron & Rebar Workers",NA,7,16,23,NA
+"258","47-4021","Elevator Installers & Repairers",1,79,16,95,7072
+"259","49-2021","Radio, Cellular, & Tower Equipment Installers & Repairs",14,12,17,29,8591
+"260","49-3043","Rail Car Repairers",3,2,32,34,9243.5
+"261","49-9069","Precision Instrument & Equipment Repairers, All Other",NA,3,18,21,NA
+"262","51-8091","Chemical Plant & System Operators",NA,-1,20,19,NA
+"263","51-8099","Plant & System Operators, All Other",6,-2,10,8,10595
+"264","53-2011","Airline Pilots, Copilots, & Flight Engineers",NA,-5,73,68,NA
+"265","53-4011","Locomotive Engineers",2,-9,48,39,8978
+"266","53-4013","Rail Yard Engineers, Dinkey Operators, & Hostlers",1,-5,10,5,11288
+"267","53-4021","Railroad Brake, Signal, & Switch Operators",2,-5,24,19,10260
+"268","53-4041","Subway & Streetcar Operators",NA,5,24,29,NA
+"269","53-4099","Rail Transportation Workers, All Other",1,1,16,17,10472
+"270","53-5031","Ship Engineers",NA,-5,23,18,NA
+"271","53-6011","Bridge & Lock Tenders",NA,0,10,10,NA
+"272","53-7071","Gas Compressor & Gas Pumping Station Operators",NA,-10,10,0,NA
