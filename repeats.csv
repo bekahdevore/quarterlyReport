@@ -1,0 +1,56 @@
+"","SOC","Occupation","Job.Postings","Entry.Education","Sector","Category","Pct..75.Earnings","Pct..75.Hourly.Earnings","deduplicatedPostings"
+"1","43-4051","Customer Service Representatives",907,"High school diploma or equivalent","Food","corp",12.6,18.92,726
+"2","43-4051","Customer Service Representatives",907,"High school diploma or equivalent","Healthcare","admi",12.6,18.92,726
+"3","49-9071","Maintenance & Repair Workers General",462,"High school diploma or equivalent","Food","prod",14.26,24.02,370
+"4","49-9071","Maintenance & Repair Workers General",462,"High school diploma or equivalent","Manufacturing","main",14.26,24.02,370
+"5","15-1199","Computer Occupations All Other",433,"Bachelor's degree","Food","corp",31.35,51.92,346
+"6","15-1199","Computer Occupations All Other",433,"Bachelor's degree","Healthcare","admi",31.35,51.92,346
+"7","15-1132","Software Developers Applications",427,"Bachelor's degree","Food","corp",27.44,43.68,342
+"8","15-1132","Software Developers Applications",427,"Bachelor's degree","IT","programmingSoftware",27.44,43.68,342
+"9","43-3031","Bookkeeping Accounting & Auditing Clerks",372,"Some college no degree","Business","fin",13.99,21.07,298
+"10","43-3031","Bookkeeping Accounting & Auditing Clerks",372,"Some college no degree","Food","corp",13.99,21.07,298
+"11","43-3031","Bookkeeping Accounting & Auditing Clerks",372,"Some college no degree","Healthcare","admi",13.99,21.07,298
+"12","13-1071","Human Resources Specialists",331,"Bachelor's degree","Food","corp",18.01,31.72,265
+"13","13-1071","Human Resources Specialists",331,"Bachelor's degree","Healthcare","admi",18.01,31.72,265
+"14","43-5081","Stock Clerks & Order Fillers",318,"No formal educational credential","Food","prod",9.72,14.77,254
+"15","43-5081","Stock Clerks & Order Fillers",318,"No formal educational credential","Logistics","ware",9.72,14.77,254
+"16","13-2011","Accountants & Auditors",293,"Bachelor's degree","Business","fin",21.93,36.42,234
+"17","13-2011","Accountants & Auditors",293,"Bachelor's degree","Food","corp",21.93,36.42,234
+"18","13-2011","Accountants & Auditors",293,"Bachelor's degree","Healthcare","admi",21.93,36.42,234
+"19","11-2022","Sales Managers",223,"Bachelor's degree","Business","adv",29.32,59.77,178
+"20","11-2022","Sales Managers",223,"Bachelor's degree","Food","hosp",29.32,59.77,178
+"21","51-9199","Production Workers All Other",189,"High school diploma or equivalent","Food","prod",9.22,14.94,151
+"22","51-9199","Production Workers All Other",189,"High school diploma or equivalent","Manufacturing","prod",9.22,14.94,151
+"23","53-3033","Light Truck or Delivery Services Drivers",189,"High school diploma or equivalent","Food","prod",12.38,22.2,151
+"24","53-3033","Light Truck or Delivery Services Drivers",189,"High school diploma or equivalent","Logistics","tran",12.38,22.2,151
+"25","43-4171","Receptionists & Information Clerks",149,"High school diploma or equivalent","Business","leg",11.03,15.43,119
+"26","43-4171","Receptionists & Information Clerks",149,"High school diploma or equivalent","Logistics","pro",11.03,15.43,119
+"27","15-1121","Computer Systems Analysts",148,"Bachelor's degree","Food","corp",25.43,41.27,118
+"28","15-1121","Computer Systems Analysts",148,"Bachelor's degree","Healthcare","admi",25.43,41.27,118
+"29","15-1121","Computer Systems Analysts",148,"Bachelor's degree","IT","informationSupport",25.43,41.27,118
+"30","13-1161","Market Research Analysts & Marketing Specialists",147,"Bachelor's degree","Business","adv",18.71,33.43,118
+"31","13-1161","Market Research Analysts & Marketing Specialists",147,"Bachelor's degree","Food","hosp",18.71,33.43,118
+"32","13-1161","Market Research Analysts & Marketing Specialists",147,"Bachelor's degree","Healthcare","admi",18.71,33.43,118
+"33","13-2051","Financial Analysts",120,"Bachelor's degree","Food","corp",26.13,45.16,96
+"34","13-2051","Financial Analysts",120,"Bachelor's degree","Healthcare","admi",26.13,45.16,96
+"35","43-9061","Office Clerks General",106,"High school diploma or equivalent","Business","adv",10.9,17.68,85
+"36","43-9061","Office Clerks General",106,"High school diploma or equivalent","Logistics","pro",10.9,17.68,85
+"37","11-2021","Marketing Managers",95,"Bachelor's degree","Business","adv",34.78,61.57,76
+"38","11-2021","Marketing Managers",95,"Bachelor's degree","Food","corp",34.78,61.57,76
+"39","11-2021","Marketing Managers",95,"Bachelor's degree","Healthcare","admi",34.78,61.57,76
+"40","17-2141","Mechanical Engineers",90,"Bachelor's degree","Logistics","ware",29.95,46.51,72
+"41","17-2141","Mechanical Engineers",90,"Bachelor's degree","Manufacturing","main",29.95,46.51,72
+"42","17-2112","Industrial Engineers",85,"Bachelor's degree","Logistics","tran",28.87,42.07,68
+"43","17-2112","Industrial Engineers",85,"Bachelor's degree","Manufacturing","prod",28.87,42.07,68
+"44","15-1143","Computer Network Architects",64,"Bachelor's degree","Healthcare","admi",28.49,53.21,51
+"45","15-1143","Computer Network Architects",64,"Bachelor's degree","IT","networkSystems",28.49,53.21,51
+"46","23-1011","Lawyers",43,"Doctoral or professional degree","Business","leg",34.06,57.89,34
+"47","23-1011","Lawyers",43,"Doctoral or professional degree","Healthcare","admi",34.06,57.89,34
+"48","43-6011","Executive Secretaries & Executive Administrative Assistants",34,"High school diploma or equivalent","Business","adv",17.98,25.95,27
+"49","43-6011","Executive Secretaries & Executive Administrative Assistants",34,"High school diploma or equivalent","Healthcare","admi",17.98,25.95,27
+"50","27-1024","Graphic Designers",26,"Bachelor's degree","Business","adv",15.84,24.49,21
+"51","27-1024","Graphic Designers",26,"Bachelor's degree","IT","webCommunications",15.84,24.49,21
+"52","11-3021","Computer & Information Systems Managers",19,"Bachelor's degree","Healthcare","admi",40.24,65.5,15
+"53","11-3021","Computer & Information Systems Managers",19,"Bachelor's degree","IT","informationSupport",40.24,65.5,15
+"54","43-2011","Switchboard Operators Including Answering Service",5,"High school diploma or equivalent","Food","corp",10.04,15.09,4
+"55","43-2011","Switchboard Operators Including Answering Service",5,"High school diploma or equivalent","Healthcare","admi",10.04,15.09,4

@@ -11,12 +11,14 @@ burningGlassQuarterConnection   <- getURL('https://docs.google.com/spreadsheets/
 emsiDataConnection              <- getURL('https://docs.google.com/spreadsheets/d/1DjmOHHFiPAyCKXkze6e8EVHBSGv-N7qt5rX1KezQUx0/pub?gid=1224165436&single=true&output=csv') 
 sectorsConnection               <- getURL('https://docs.google.com/spreadsheets/d/1rL0sCtUSzBbhlZYSGvUgx3fXip55o2OpMWUMK_6TKaA/pub?gid=487558132&single=true&output=csv')
 socCrosswalkConnection          <- getURL('https://docs.google.com/spreadsheets/d/1DjmOHHFiPAyCKXkze6e8EVHBSGv-N7qt5rX1KezQUx0/pub?gid=1551915918&single=true&output=csv')
+splitsConnection                <- getURL("https://docs.google.com/spreadsheets/d/1LZ96VKkawzvybK9s5FQNX0S5sCuuiTJO0EPNAWajecU/pub?gid=253150309&single=true&output=csv")
 #socConnection                   <- getURL('https://docs.google.com/spreadsheets/d/1wWVpXkU7OG2dGjCEEOK4Z4sS02tgK9_zee9cl0MdQRE/pub?gid=0&single=true&output=csv')
 
 burningGlassQuarter             <- read.csv(textConnection(burningGlassQuarterConnection), check.names = FALSE)
 emsiData                        <- read.csv(textConnection(emsiDataConnection),            check.names = FALSE)
 sectors                         <- read.csv(textConnection(sectorsConnection))
 socCrosswalk                    <- read.csv(textConnection(socCrosswalkConnection),        check.names = FALSE)
+splits                          <- read.csv(textConnection(splitsConnection),              check.names = FALSE)
 #majorSocCodeNames               <- read.csv(textConnection(socConnection))
 
 rm(burningGlassQuarterConnection, 
@@ -29,30 +31,47 @@ mainDataFile                    <- full_join(burningGlassQuarter, emsiData, by =
 mainDataFile                    <- full_join(mainDataFile, socCrosswalk,    by = 'SOC')
 mainDataFile                    <- left_join(mainDataFile, sectors,         by = "SOC")
 
+
+#Make new columns with SOC + SECTOR for Main Data File and Splits file
+splits$socSector           <- paste(splits$SOC, splits$Sector)
+mainDataFile$socSector     <- paste(mainDataFile$SOC, mainDataFile$Sector)
+
+splits           <- splits %>% select(4, 3)
+
+mainDataFile     <- left_join(mainDataFile, splits, by = "socSector")    
+mainDataFile     <- mainDataFile %>% select(-16, -17)
+mainDataFile$SPLIT[is.na(mainDataFile$SPLIT)] <- 1
+
 rm(burningGlassQuarter,
    emsiData, 
    sectors,
-   socCrosswalk)
+   socCrosswalk,
+   splits)
 
 #Select necessary variables
 mainDataFile                    <- mainDataFile %>%
-                                      select(1, 12, 3, 10:11, 7, 14:15)
+                                      select(1, 12, 3, 10:11, 7, 14:16)
 
-mainDataFile                    <- as.data.frame(lapply(mainDataFile, function(x) {
-                                                            gsub(',', '', x) }))
-
-mainDataFile                    <- as.data.frame(lapply(mainDataFile, function(x) {
-                                                            gsub('\\$', '', x )}))
+replaceRemove <- function(dataToEnter, replaceThis, withThis){
+                            dataToEnter <- as.data.frame(lapply(dataToEnter, function(x) {gsub(replaceThis, withThis, x) }))
+}
+mainDataFile <- replaceRemove(mainDataFile, ",", "")
+mainDataFile <- replaceRemove(mainDataFile, "\\$", "")
 
 variables <- c('Number.of.Job.Postings' ,
                'Pct..25.Hourly.Earnings',
-               'Pct..75.Hourly.Earnings')
+               'Pct..75.Hourly.Earnings', 
+               'SPLIT')
 
 mainDataFile[,variables] <- lapply(mainDataFile[,variables] , as.character)
 mainDataFile[,variables] <- lapply(mainDataFile[,variables] , as.numeric)
 
 mainDataFile$deduplicatedPostings <- (mainDataFile$Number.of.Job.Postings)* .8
 mainDataFile$deduplicatedPostings <- round(mainDataFile$deduplicatedPostings, digits = 0)
+mainDataFile$deduplicatedPostings <- round(mainDataFile$deduplicatedPostings * mainDataFile$SPLIT)
+
+mainDataFile <- mainDataFile %>% select(-9)
+
 
 mainDataFile[is.na(mainDataFile)] <- 0
 
@@ -133,6 +152,8 @@ wages75                 <- function(dataToEnter) {
 }
 
 sumDeduplicatedPostings <- function(dataToEnter){sum(dataToEnter[,"deduplicatedPostings"])}
+
+
 ########################################################################################################################################################################################################################
 ########################################################################################################################################################################################################################
 #####################################       IT          #################################################################################################################################################################
@@ -354,24 +375,11 @@ techJobs <- mainDataFile %>% filter(Sector == "IT")
 
       ######################## SECTOR JOBS ########################################
       manJobs <- mainDataFile %>% filter(Sector == "Manufacturing")
-      
       ######################## SECTOR JOBS BY EDUCATION LEVEL #####################
-      ## BACHELORS
-      manJobsBa <- manJobs %>% 
-        filter(Typical.Entry.Level.Education == "Bachelor's degree")
-      
-      ## ASSOCIATES     
-      manJobsAs <- manJobs %>%
-        filter(Typical.Entry.Level.Education == "Associate's degree")
-      
-      ## CERTIFICATES    
-      manJobsCe <- manJobs %>% 
-        filter(Typical.Entry.Level.Education == "Postsecondary nondegree award")
-      
-      ## HIGH SCHOOL
-      manJobsHi <- manJobs %>% 
-        filter(Typical.Entry.Level.Education == "High school diploma or equivalent")
-
+      manJobsBa <- manJobs %>% filter(Typical.Entry.Level.Education == "Bachelor's degree")                 ## BACHELORS
+      manJobsAs <- manJobs %>% filter(Typical.Entry.Level.Education == "Associate's degree")                ## ASSOCIATES    
+      manJobsCe <- manJobs %>% filter(Typical.Entry.Level.Education == "Postsecondary nondegree award")     ## CERTIFICATES    
+      manJobsHi <- manJobs %>% filter(Typical.Entry.Level.Education == "High school diploma or equivalent") ## HIGH SCHOOL
       ######################## SECTOR JOBS BY COLUMN ##############################
       ################# COLUMN 
       ####### EDUCATION LEVEL
@@ -866,7 +874,7 @@ techJobs <- mainDataFile %>% filter(Sector == "IT")
       admiBa     <- admiBa %>% filter(!SOC %in% variables & SOC != "13-1071")
       
       healthComp$deduplicatedPostings <- filterPostingsByPercent(healthComp, .1) 
-      healthHr$deduplicatedPostings   <- filterPostingsByPercent(healthHr,   .9)
+      healthHr$deduplicatedPostings   <- filterPostingsByPercent(healthHr,   .5)
       healthCompAndHr                 <- rbind(healthHr, healthComp)
       
       admiBa <- rbind(admiBa, healthCompAndHr)
