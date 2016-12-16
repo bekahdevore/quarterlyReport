@@ -12,7 +12,7 @@ emsiDataConnection              <- getURL('https://docs.google.com/spreadsheets/
 sectorsConnection               <- getURL('https://docs.google.com/spreadsheets/d/1rL0sCtUSzBbhlZYSGvUgx3fXip55o2OpMWUMK_6TKaA/pub?gid=487558132&single=true&output=csv')
 socCrosswalkConnection          <- getURL('https://docs.google.com/spreadsheets/d/1DjmOHHFiPAyCKXkze6e8EVHBSGv-N7qt5rX1KezQUx0/pub?gid=1551915918&single=true&output=csv')
 splitsConnection                <- getURL("https://docs.google.com/spreadsheets/d/1LZ96VKkawzvybK9s5FQNX0S5sCuuiTJO0EPNAWajecU/pub?gid=253150309&single=true&output=csv")
-#socConnection                   <- getURL('https://docs.google.com/spreadsheets/d/1wWVpXkU7OG2dGjCEEOK4Z4sS02tgK9_zee9cl0MdQRE/pub?gid=0&single=true&output=csv')
+#socConnection                  <- getURL('https://docs.google.com/spreadsheets/d/1wWVpXkU7OG2dGjCEEOK4Z4sS02tgK9_zee9cl0MdQRE/pub?gid=0&single=true&output=csv')
 
 burningGlassQuarter             <- read.csv(textConnection(burningGlassQuarterConnection), check.names = FALSE)
 emsiData                        <- read.csv(textConnection(emsiDataConnection),            check.names = FALSE)
@@ -127,33 +127,13 @@ degreeName0   <- "Less than High School"
 ########################################################################################################################################################################################################################
 ########################################################################################################################################################################################################################
 # Functions
-roundMean               <- function(dataEntry) {
-                              sprintf("%.2f", round(mean(dataEntry), digits = 2))
-}
-
-formatCommas            <- function(dataEntry) {
-                              format(dataEntry, big.mark = ",", trim = TRUE)
-}
-
-categoryFilter          <- function(dataNameEd, category){dataNameEd %>%
-                              filter(Category  == category)
-}
-
-filterPostingsByPercent <- function(dataToEnter, percentMultiply) {
-                              dataToEnter[,'deduplicatedPostings'] <- dataToEnter[,'deduplicatedPostings']* percentMultiply
-}
-
-wages25                 <- function(dataToEnter) {
-                              roundMean(dataToEnter[,'Pct..25.Hourly.Earnings'])
-}
-
-wages75                 <- function(dataToEnter) {
-                              roundMean(dataToEnter[,'Pct..75.Hourly.Earnings'])
-}
-
+roundMean               <- function(dataEntry) {sprintf("%.2f", round(mean(dataEntry), digits = 2))}
+formatCommas            <- function(dataEntry) {format(dataEntry, big.mark = ",", trim = TRUE)}
+categoryFilter          <- function(dataNameEd, category){dataNameEd %>% filter(Category  == category)}
+filterPostingsByPercent <- function(dataToEnter, percentMultiply) {dataToEnter[,'deduplicatedPostings'] <- dataToEnter[,'deduplicatedPostings']* percentMultiply}
+wages25                 <- function(dataToEnter) {roundMean(dataToEnter[,'Pct..25.Hourly.Earnings'])}
+wages75                 <- function(dataToEnter) {roundMean(dataToEnter[,'Pct..75.Hourly.Earnings'])}
 sumDeduplicatedPostings <- function(dataToEnter){sum(dataToEnter[,"deduplicatedPostings"])}
-
-
 ########################################################################################################################################################################################################################
 ########################################################################################################################################################################################################################
 #####################################       IT          #################################################################################################################################################################
@@ -375,10 +355,13 @@ techJobs <- mainDataFile %>% filter(Sector == "IT")
 
       ######################## SECTOR JOBS ########################################
       manJobs <- mainDataFile %>% filter(Sector == "Manufacturing")
+      certSoc <- c("51-4121", "49-9041", "51-4011", "51-1011")
+      manJobsCe <- manJobs %>% filter(SOC %in% certSoc) 
+      manJobs <- manJobs %>% filter(!SOC %in% certSoc)
       ######################## SECTOR JOBS BY EDUCATION LEVEL #####################
       manJobsBa <- manJobs %>% filter(Typical.Entry.Level.Education == "Bachelor's degree")                 ## BACHELORS
       manJobsAs <- manJobs %>% filter(Typical.Entry.Level.Education == "Associate's degree")                ## ASSOCIATES    
-      manJobsCe <- manJobs %>% filter(Typical.Entry.Level.Education == "Postsecondary nondegree award")     ## CERTIFICATES    
+                                                                                                            ## CERTIFICATES (See above, special situation)
       manJobsHi <- manJobs %>% filter(Typical.Entry.Level.Education == "High school diploma or equivalent") ## HIGH SCHOOL
       ######################## SECTOR JOBS BY COLUMN ##############################
       ################# COLUMN 
@@ -423,7 +406,7 @@ techJobs <- mainDataFile %>% filter(Sector == "IT")
       ## CERTIFICATE
       manCertificateProd <- "Production Supervisors; CNC Machine Tool Operators"
       manCertificateProc <- noJobsMessage
-      manCertificateQual <- "Quality Coordinators"
+      manCertificateQual <- noJobsMessage
       manCertificateMain <- "Welders; Industrial Machinary Mechanics; Industrial Maintenance Technicians"
       
       ## HIGH SCHOOL
@@ -492,12 +475,12 @@ techJobs <- mainDataFile %>% filter(Sector == "IT")
       manWagesBaQualHIGH <- wages75(qualBa)
       manWagesBaMainHIGH <- wages75(mainBa)
       ## ASSOCIATES
-      manWagesAsProdHIGH <- wages75(prodCe)
-      manWagesAsProcHIGH <- wages75(procCe)
-      manWagesAsQualHIGH <- wages75(qualCe)
-      manWagesAsMainHIGH <- wages75(mainCe)
+      manWagesAsProdHIGH <- wages75(prodAs)
+      manWagesAsProcHIGH <- wages75(procAs)
+      manWagesAsQualHIGH <- wages75(qualAs)
+      manWagesAsMainHIGH <- wages75(mainAs)
       ## CERTIFICATES
-      manWagesCeProdHIGH <- wages75(qualCe)
+      manWagesCeProdHIGH <- wages75(prodCe)
       manWagesCeProcHIGH <- wages75(procCe)
       manWagesCeQualHIGH <- wages75(qualCe)
       manWagesCeMainHIGH <- wages75(mainCe)
@@ -644,6 +627,98 @@ techJobs <- mainDataFile %>% filter(Sector == "IT")
       busWagesHiFinHIGH <- wages75(finHi)
       busWagesHiLegHIGH <- wages75(legHi)
       busWagesHiAdvHIGH <- wages75(advHi)
+
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+#####################################     CONSTRUCTION       #################################################################################################################################################################
+########################################################################################################################################################################################################################
+########################################################################################################################################################################################################################
+      
+      ######################## SECTOR JOBS ########################################
+      conJobs <- mainDataFile %>% filter(Sector == "Construction")
+      ######################## SECTOR JOBS BY EDUCATION LEVEL #####################
+      conJobsCe <- conJobs %>% filter(Typical.Entry.Level.Education == "Postsecondary nondegree award")        ## Credential
+      conJobsHi <- conJobs %>% filter(Typical.Entry.Level.Education == "High school diploma or equivalent")    ## High School  
+      conJobsNo <- conJobs %>% filter(Typical.Entry.Level.Education == "No formal educational credential")     ## No formal education credential   
+      
+      variables       <- c("47-2111", "47-2152", "41-9022", "41-9021")
+      apprenticeships <- conJobs %>% filter(SOC %in% variables) 
+      conJobsCe       <- rbind(conJobsCe, apprenticeships)
+      conJobsHi       <- conJobsHi %>% filter(!SOC %in% variables)
+      ######################## SECTOR JOBS BY COLUMN ##############################
+      ################# COLUMN 
+      ####### EDUCATION LEVEL
+      ## ONE
+      consCe  <- categoryFilter(conJobsCe, 'con')
+      consHi  <- categoryFilter(conJobsHi, 'con')
+      consNo  <- categoryFilter(conJobsNo, 'con')
+      ## TWO
+      propCe <- categoryFilter(conJobsCe, 'prop')
+      propHi <- categoryFilter(conJobsHi, 'prop')
+      propNo <- categoryFilter(conJobsNo, 'prop')
+      ## THREE
+      realCe <- categoryFilter(conJobsCe, 'real')
+      realHi <- categoryFilter(conJobsHi, 'real')
+      realNo <- categoryFilter(conJobsNo, 'real')      
+      
+      ######################## COLUMN ENTRY #######################################    
+      ################# NAMES 
+      ####### EDUCATION LEVEL
+      ## CERTIFICATE
+      conCertificateCons  <- "Electricians; Plumbers; HVAC & Refrigeration Mechanics"
+      conCertificateProp  <- "Electronic Equiptment Installers and Repairers"
+      conCertificateReal  <- "Real Estate Agents and Brokers"
+      ## HIGH SCHOOL
+      conHighSchoolCons   <- "Supervisors; Inspectors; Helpers"
+      conHighSchoolProp   <- "Repair & Installation Maintenance; Supervisors of Housekeeping & Janitorial Workers"
+      conHighSchoolReal   <- "Property Real Estate & Community Association Managers"
+      ## NO FORMAL EDUCATION CREDENTIAL 
+      conNoSchoolCons    <- "Construction Laborers, Painters, Drywall Installers, Roofers"
+      conNoSchoolProp    <- "Janitors; Housekeeping Cleaners; Landscaping & Groundskeeping Workers"
+      conNoSchoolReal    <- noJobsMessage 
+      
+      ################# JOB POSTINGS
+      ####### TOTALS           
+      totalJobsCon           <-  sumDeduplicatedPostings(conJobs)
+      totalJobPostingsConCe  <-  sumDeduplicatedPostings(conJobsCe)
+      totalJobPostingsConHi  <-  sumDeduplicatedPostings(conJobsHi)
+      totalJobPostingsConNo  <-  sumDeduplicatedPostings(conJobsNo)
+      ####### EDUCATION LEVEL
+      ## CERTIFICATES
+      conPostingsCeCons     <-  sumDeduplicatedPostings(consCe)
+      conPostingsCeProp     <-  sumDeduplicatedPostings(propCe) 
+      conPostingsCeReal     <-  sumDeduplicatedPostings(realCe)
+      ## HIGH SCHOOL
+      conPostingsHiCons     <-  sumDeduplicatedPostings(consHi)
+      conPostingsHiProp     <-  sumDeduplicatedPostings(propHi) 
+      conPostingsHiReal     <-  sumDeduplicatedPostings(realHi)
+      ## NO FORMAL EDUCATION CREDENTIAL
+      conPostingsNoCons     <-  sumDeduplicatedPostings(consNo)
+      conPostingsNoProp     <-  sumDeduplicatedPostings(propNo) 
+      conPostingsNoReal     <-  sumDeduplicatedPostings(realNo)
+      ################# WAGES
+      ####### 25th PERCENTILE 
+      ## EDUCATION LEVEL
+      conWagesCeConsLOW  <- wages25(consCe)  # CERTIFICATES 
+      conWagesCePropLOW  <- wages25(propCe)
+      conWagesCeRealLOW  <- wages25(realCe)
+      conWagesHiConsLOW  <- wages25(consHi)  # HIGH SCHOOL 
+      conWagesHiPropLOW  <- wages25(propHi)
+      conWagesHiRealLOW  <- wages25(realHi)
+      conWagesNoConsLOW  <- wages25(consNo)  # NO FORMAL EDUCATION CREDENTIAL
+      conWagesNoPropLOW  <- wages25(propNo)
+      conWagesNoRealLOW  <- wages25(realNo)
+      ####### 75th PERCENTILE 
+      ## EDUCATION LEVEL
+      conWagesCeConsHIGH <- wages75(consCe) ## CERTIFICATES
+      conWagesCePropHIGH <- wages75(propCe)
+      conWagesCeRealHIGH <- wages75(realCe)
+      conWagesHiConsHIGH <- wages75(consHi) ## HIGH SCHOOL 
+      conWagesHiPropHIGH <- wages75(propHi)
+      conWagesHiRealHIGH <- wages75(realHi)    
+      conWagesNoConsHIGH <- wages75(consNo) # NO FORMAL EDUCATION CREDENTIAL
+      conWagesNoPropHIGH <- wages75(propNo)
+      conWagesNoRealHIGH <- wages75(realNo)
       
 ########################################################################################################################################################################################################################
 ########################################################################################################################################################################################################################
@@ -928,7 +1003,7 @@ techJobs <- mainDataFile %>% filter(Sector == "IT")
       ## BACHELORS      
       healthPostingsBaDire      <-  sumDeduplicatedPostings(direBa)
       healthPostingsBaDiag      <-  sumDeduplicatedPostings(diagBa) 
-      healthPostingsBaAdmi      <-  sumDeduplicatedPostings(admiBa)
+      healthPostingsBaAdmi      <-  round(sumDeduplicatedPostings(admiBa), 0)
       ## ASSOCIATES  
       healthPostingsAsDire      <-  sumDeduplicatedPostings(direAs)
       healthPostingsAsDiag      <-  sumDeduplicatedPostings(diagAs) 
@@ -1002,7 +1077,8 @@ techJobs <- mainDataFile %>% filter(Sector == "IT")
       colnames(mainData)[3] <- 'Job Postings'
       colnames(mainData)[4] <- 'Entry Education'
       colnames(mainData)[7] <- 'Pct. 25 Earnings'
-      colnames(mainData)[7] <- 'Pct. 75 Earnings'
+      colnames(mainData)[8] <- 'Pct. 75 Earnings'
+      colnames(mainData)[9] <- 'Deduplicated Postings'
 
 shinyServer(function(input, output) {
   #     output$healthcare <- renderUI(
@@ -1174,6 +1250,68 @@ shinyServer(function(input, output) {
                          logWagesHiWareHIGH = logWagesHiWareHIGH
             ))
           
+          output$construction <- renderUI(
+            htmlTemplate('constructionTemplate.html', 
+                         totalJobs = formatCommas(totalJobsCon), 
+                         degreeName2        = degreeName2, 
+                         degreeName1        = degreeName1,
+                         degreeName0        = degreeName0, 
+                         
+                         # Certificate
+                         conCertificateCons = conCertificateCons, 
+                         conCertificateProp = conCertificateProp, 
+                         conCertificateReal = conCertificateReal, 
+                         
+                         totalJobPostingsConCe = formatCommas(totalJobPostingsConCe),
+                         
+                         conPostingsCeCons = conPostingsCeCons, 
+                         conPostingsCeProp = formatCommas(conPostingsCeProp), 
+                         conPostingsCeReal = conPostingsCeReal, 
+                         
+                         conWagesCeConsLOW  = conWagesCeConsLOW,
+                         conWagesCeConsHIGH = conWagesCeConsHIGH,
+                         conWagesCePropLOW  = conWagesCePropLOW, 
+                         conWagesCePropHIGH = conWagesCePropHIGH,
+                         conWagesCeRealLOW  = conWagesCeRealLOW,
+                         conWagesCeRealHIGH = conWagesCeRealHIGH,
+
+                         #High School
+                         conHighSchoolCons   = conHighSchoolCons, 
+                         conHighSchoolProp   = conHighSchoolProp, 
+                         conHighSchoolReal   = conHighSchoolReal,
+                         
+                         totalJobPostingsConHi = totalJobPostingsConHi,
+                         
+                         conPostingsHiCons  = conPostingsHiCons, 
+                         conPostingsHiProp  = conPostingsHiProp, 
+                         conPostingsHiReal  = conPostingsHiReal, 
+                         
+                         conWagesHiConsLOW  = conWagesHiConsLOW,
+                         conWagesHiConsHIGH = conWagesHiConsHIGH,
+                         conWagesHiPropLOW  = conWagesHiPropLOW, 
+                         conWagesHiPropHIGH = conWagesHiPropHIGH,
+                         conWagesHiRealLOW  = conWagesHiRealLOW,
+                         conWagesHiRealHIGH = conWagesHiRealHIGH,
+                         
+                         # NoSchool
+                         conNoSchoolCons  =  conNoSchoolCons,
+                         conNoSchoolProp  = conNoSchoolProp,
+                         conNoSchoolReal  = conNoSchoolReal, 
+                         
+                         totalJobPostingsConNo = totalJobPostingsConNo,
+                         
+                         conPostingsNoCons  = conPostingsNoCons, 
+                         conPostingsNoProp  = conPostingsNoProp, 
+                         conPostingsNoReal  = conPostingsNoReal, 
+                         
+                         conWagesNoConsLOW  = conWagesNoConsLOW,
+                         conWagesNoConsHIGH = conWagesNoConsHIGH,
+                         conWagesNoPropLOW  = conWagesNoPropLOW, 
+                         conWagesNoPropHIGH = conWagesNoPropHIGH,
+                         conWagesNoRealLOW  = conWagesNoRealLOW,
+                         conWagesNoRealHIGH = conWagesNoRealHIGH
+            ))
+          
           output$manufacturing <- renderUI(
             htmlTemplate('manufacturingTemplate.html', 
                          totalJobs = formatCommas(totalJobsMan), 
@@ -1218,7 +1356,6 @@ shinyServer(function(input, output) {
                          manPostingsAsQual = manPostingsAsQual, 
                          manPostingsAsMain = manPostingsAsMain, 
                          
-                         
                          manWagesAsProdLOW  = manWagesAsProdLOW,
                          manWagesAsProdHIGH = manWagesAsProdHIGH,
                          manWagesAsProcLOW  = manWagesAsProcLOW, 
@@ -1227,7 +1364,6 @@ shinyServer(function(input, output) {
                          manWagesAsQualHIGH = manWagesAsQualHIGH,
                          manWagesAsMainLOW  = manWagesAsMainLOW,
                          manWagesAsMainHIGH = manWagesAsMainHIGH,           
-                         
                          
                          # Certificate
                          manCertificateProd = manCertificateProd, 
@@ -1241,7 +1377,6 @@ shinyServer(function(input, output) {
                          manPostingsCeProc = formatCommas(manPostingsCeProc), 
                          manPostingsCeQual = manPostingsCeQual, 
                          manPostingsCeMain = manPostingsCeMain, 
-                         
                          
                          manWagesCeProdLOW  = manWagesCeProdLOW,
                          manWagesCeProdHIGH = manWagesCeProdHIGH,

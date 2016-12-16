@@ -54,6 +54,12 @@ shinyUI(fluidPage(
         ), 
       
       tabPanel(
+        'Construction',
+        h2("Construction", align = "center"),
+        htmlOutput('construction')
+      ),
+      
+      tabPanel(
         'Main Data File', 
         br(),
         dataTableOutput('mainData')
